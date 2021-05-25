@@ -1,0 +1,715 @@
+@font-face {
+  font-family: 'Marvel Regular';
+  src: url(../fonts/MarvelRegular-Dj83.ttf);
+}
+
+@font-face {
+  font-family: 'Permanent Marker';
+  src: url(../fonts/PermanentMarker-Regular.ttf);
+}
+
+//*Fonts
+$mainFt: 'Anton', sans-serif;
+$bodyFt: 'Share Tech Mono', monospace;
+$titleFt: 'Permanent Marker';
+
+//*Colors
+$black: #000002;
+$darkGrey: rgba(20, 19, 19, 0.5);
+$bgGradient: linear-gradient(to right, #020107, #000211);
+$neonMain: #e62429;
+$darkRed: #610c16;
+$neonSec: #ff8e91;
+$white: rgba(255, 255, 255, 0.9);
+$neonViolet: #ff58d4;
+$neonBlue: #03e9f4;
+
+//*Breakpoints
+$xxs: 320px;
+$xs: 375px;
+$tablet: 768px;
+$lgtablet: 992px;
+$desktop: 1200px;
+$lgdesktop: 1400px;
+$xldesktop: 1920px;
+
+//* Mixins
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gradient {
+  background: -webkit-linear-gradient(
+    to right,
+    #8a3cbb,
+    #b33f97,
+    #ff7283,
+    #c69f51
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin xxs {
+  @media (max-width: #{$xxs}) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: #{$xs}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin lgtablet {
+  @media (min-width: #{$lgtablet}) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin portrait {
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin ProPortrait {
+  @media (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin lgdesktop {
+  @media (min-width: #{$lgdesktop}) {
+    @content;
+  }
+}
+
+@mixin xldesktop {
+  @media (min-width: #{$xldesktop}) {
+    @content;
+  }
+}
+
+//* Basics
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $black;
+  font-family: $bodyFt;
+  color: $white;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  background: #77010f;
+}
+
+main {
+  padding: 0 0px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+section {
+  padding: 50px 0px;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-family: $titleFt;
+  font-size: 52px;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  padding: 0px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  .headings {
+    text-align: center;
+  }
+  h1 {
+    font-family: 'Marvel Regular';
+    text-transform: uppercase;
+    font-size: 62px;
+    line-height: 1;
+  }
+  .subheading {
+    font-size: 16px;
+    font-family: $titleFt;
+  }
+}
+
+//* Hero
+#hero {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 100px 5px 50px;
+  position: relative;
+  .arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid $neonMain;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    right: 45%;
+    transform: translateY(0px);
+    transition: opacity transform 0.5s ease-in;
+    &:hover {
+      transform: translateY(-10px);
+      transition: transform 0.5s ease;
+    }
+  }
+  .spinner {
+    position: absolute;
+    right: 45%;
+    top: 50%;
+  }
+}
+
+.show {
+  visibility: visible;
+}
+
+.search-col {
+  @include flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 15px;
+}
+
+.col-lg-7 {
+  align-self: baseline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 250px;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+
+  input {
+    padding: 2rem 2rem 0rem 0.2rem;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $neonMain;
+    outline: none;
+    z-index: 150;
+    font-size: 1.2rem;
+    width: 100%;
+    color: $white;
+    &::selection {
+      background: rgba(0, 0, 0, 0.1);
+      color: black;
+    }
+  }
+
+  label {
+    height: fit-content;
+    width: 100%;
+    pointer-events: none;
+    &:after {
+      content: '';
+      position: absolute;
+      top: -190px;
+      left: -6px;
+      width: 110%;
+      height: 100%;
+      box-shadow: 0 8px 6px -6px $neonMain;
+      transform: translateX(-100%);
+      transition: all 0.5s ease;
+    }
+    .content-search {
+      position: absolute;
+      top: 35px;
+      left: 0px;
+      transition: 0.3s ease;
+      color: white;
+    }
+  }
+
+  input:focus + .label-search .content-search,
+  input:not(:placeholder-shown) + .label-search .content-search {
+    transform: translateY(-25px);
+    color: #ff383d;
+    font-size: 14px;
+  }
+
+  input:focus + .label-search:after {
+    transform: translateX(0%);
+  }
+
+  button.btn-search {
+    padding: 0.7rem 1.5rem;
+    width: 70%;
+    align-self: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #ff4046;
+    font-weight: 600;
+    border: 2px solid $neonMain;
+    transition: 0.5s ease;
+    &:hover {
+      background-color: $neonMain;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px $neonMain, 0 0 25px $neonMain, 0 0 50px $neonMain;
+      overflow: hidden;
+    }
+  }
+}
+
+//******** CHARACTERS ***************
+
+#characters {
+  height: 100%;
+  width: 100%;
+  .card-deck {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .card {
+    min-height: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+    margin: auto;
+    background: transparent;
+    border: none;
+
+    .card-img-top {
+      width: 100%;
+      border-radius: 50%;
+      align-self: center;
+      margin-bottom: 20px;
+      margin-top: -60px;
+    }
+    .card-body {
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-title {
+      color: white;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 600;
+      font-size: 42px;
+    }
+    .card-text {
+      color: white;
+      text-align: justify;
+      font-size: 18px;
+    }
+    .text-muted {
+      color: #ff383d !important;
+      font-size: 16px;
+    }
+  }
+  .error {
+    position: absolute;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+//********** COMICS ***********
+
+#comics {
+  width: 100%;
+  height: 100%;
+  @include flex;
+  h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  h5 {
+    text-transform: uppercase;
+  }
+  .card {
+    overflow: hidden;
+    border: none;
+    margin-bottom: 25px;
+    cursor: pointer;
+    &:hover .hide {
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+  }
+  .card-img {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img-overlay {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 101%;
+    height: 101%;
+    padding: 1rem;
+    &:hover {
+      background-color: rgba(175, 175, 175, 0.2);
+      backdrop-filter: blur(15px);
+      transition: background-color 0.2s ease;
+    }
+  }
+  .card-btn {
+    margin-left: -1%;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.5);
+    border: 1.5px solid transparent;
+    outline: none;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 1s ease;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5;
+    &:hover {
+      // background-color: rgba(219, 219, 219, 0.1);
+      background-color: rgba(255, 0, 0, 0.4);
+      border: 1.5px solid rgba(255, 0, 0, 0.1);
+    }
+  }
+  .price {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .hide {
+    opacity: 0;
+  }
+}
+
+//********* MODAL ******************
+
+#infoModal {
+  display: grid;
+}
+.modal-header {
+  border: none;
+  background: #b30d0d;
+}
+.modal-body {
+  color: white;
+  background: rgba(179, 13, 13, 1);
+  padding-bottom: 4rem;
+}
+
+.modal-pic {
+  margin: 0 auto;
+}
+.modal-title {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+.close {
+  text-shadow: none;
+}
+
+//*** FOOTER ***********
+
+footer {
+  margin-top: 30px;
+  height: 10vh;
+  min-height: 10vh;
+  width: 100%;
+  @include flex;
+  position: absolute;
+  bottom: 0;
+  a {
+    text-decoration: none;
+    color: $neonMain;
+    align-self: flex-end;
+    &:hover {
+      color: $neonSec;
+    }
+  }
+  p {
+    text-transform: uppercase;
+    font-family: $bodyFt;
+    font-size: 14px;
+  }
+}
+
+//** Media Queries **//
+
+@include xs {
+  form {
+    button.btn-search {
+      width: 50%;
+    }
+  }
+}
+
+@include tablet {
+  main {
+    padding: 0 15px;
+  }
+
+  header {
+    img {
+      margin-top: 20px;
+    }
+  }
+
+  #hero {
+    align-items: unset;
+    .row {
+      justify-content: center;
+    }
+  }
+
+  .search-col {
+    margin: 0 0px;
+  }
+  #characters {
+    .card {
+      .card-img-top {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@include landscape {
+  .col-lg-7 {
+    align-self: center;
+  }
+  #hero {
+    .arrow {
+      bottom: 60px;
+      right: 0;
+    }
+  }
+
+  #comics h2 {
+    margin-bottom: 5rem;
+  }
+}
+
+@include portrait {
+  #hero {
+    .arrow {
+      bottom: 120px;
+      right: 0;
+    }
+  }
+}
+
+@include ProPortrait {
+  form {
+    height: 330px;
+    label:after {
+      top: -270px;
+    }
+  }
+  #hero {
+    .arrow {
+      bottom: 0px;
+      right: 45%;
+    }
+  }
+
+  #comics h2 {
+    margin-bottom: 5rem;
+  }
+}
+
+@include lgtablet {
+  header {
+    z-index: 100;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+  }
+
+  #hero {
+    padding-top: 0;
+    min-height: 90vh;
+    justify-content: center;
+
+    .row {
+      min-height: 530px;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  #characters {
+    .card-deck {
+      margin-left: 20px;
+    }
+    .card {
+      .card-img-top {
+        width: 30%;
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+
+      .card-body {
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+@include desktop {
+  main {
+    padding: 0 50px;
+  }
+  header {
+    padding: 0 25px;
+    h1 {
+      font-size: 52px;
+    }
+  }
+  section {
+    padding-top: 0;
+    #hero {
+      .container {
+        justify-content: space-evenly;
+        align-self: flex-start;
+        padding: 0 20px 50px;
+        max-width: 1200px;
+      }
+      .row {
+        width: 100%;
+        .search-col {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+
+  .card-deck {
+    margin-left: 30px;
+  }
+
+  #hero {
+    .arrow {
+      right: -25px;
+      bottom: 80px;
+    }
+  }
+
+  form {
+    height: 300px;
+    button.btn-search {
+      padding: 1rem 2.5rem;
+    }
+    label {
+      &:after {
+        top: -241px;
+      }
+    }
+    button.btn-search {
+      padding: 0.8rem 4rem;
+    }
+  }
+  #characters {
+    .error {
+      top: 250px;
+      left: 15%;
+    }
+  }
+  #comics {
+    h2 {
+      margin-bottom: 100px;
+    }
+    .card-btn {
+      padding: 0.7rem 1rem;
+      width: 90%;
+    }
+  }
+
+  .modal-title {
+    font-size: 1.8rem;
+  }
+}
+
+@include lgdesktop {
+  #hero {
+    .arrow {
+      bottom: 40px;
+    }
+  }
+}
+
+@include xldesktop {
+  #hero {
+    .arrow {
+      bottom: 10px;
+    }
+  }
+}

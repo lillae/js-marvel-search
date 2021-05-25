@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Marvel Project</title>
+</head>
+
+<body>
+    <header>
+        <div class="headings">
+            <h1>Marvel</h1>
+        </div>
+    </header>
+
+    <div class="content">
+        <main>
+            <section id="hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-8 col-lg-4 search-col">
+                            <form action="" class="search-form">
+                                <input type="text" name="search" autocomplete="off" placeholder=" "
+                                    class="search-input">
+                                <label for="search" class="label-search">
+                                    <span class="content-search ">
+                                        Search Hero</span>
+                                </label>
+                                <button type="submit" class="btn-search">Search</button>
+                            </form>
+                        </div>
+                        <div class="col-sm-12 col-lg-7 pic-col">
+                            <div class="spinner-border text-danger spinner" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                            <div class="card-deck" id="characters">
+                                <!-- <div class="card">
+                                        <img src="./img/Other/wp4516974.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                                to additional content. This content is a little bit longer.</p>
+                                            <p><small class="text-muted">Last updated 3 mins ago</small>"></p>
+                                        </div>
+                                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#comics">
+                    <div class="arrow"></div>
+                </a>
+            </section>
+
+            <section id="comics">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12" id="title">
+                            <!-- <h2>Comics</h2> -->
+                        </div>
+                    </div>
+                    <div class="row d-flex" id=comicsCards>
+                        <!-- <div class="col-lg-3">
+                            <div class="card bg-dark text-white">
+                                <img src="./img/Red_Marvel.jpeg" class="card-img comic-pic" alt="..." data-toggle="modal" data-target="#exampleModal">
+                                <div class="card-img-overlay d-flex">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"></p>
+                                     <a href="" class="card-btn hide" data-toggle="modal" data-target="#exampleModal">View details</a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row" id="modal">
+                                        <div class="col-lg-4 d-flex" id="pictures" style="align-self:center">
+                                            <!-- <img src="${findComic.thumbnail.path}/portrait_incredible.jpg" alt=""
+                                                class="modal-pic"> -->
+                                        </div>
+                                        <div class="col-lg-8" id="infoModal">
+                                            <!-- <h5 class="modal-title" id="exampleModalLabel">${findComic.title}</h5>
+                                            <p>${findComic.description}</p>
+                                            
+                                            <p style="margin-top: 20px;"> <strong>Creators: </strong>
+                                                ${findComic.creators.items.map(
+                                                (item) => {return `${item.name}`;})}</p>
+                                            <p style="margin-top: 20px;"> <strong>Characters: </strong>
+                                                ${findComic.characters.items.map(
+                                                (item) => {return `${item.name}`;})}</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <a href="http://marvel.com" rel="noopener noreferrer" target="_blank">
+                <p>All data provided by Marvel. © 2021 Marvel.</p>
+            </a>
+
+        </footer>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+
+
+</body>
+
+</html>
