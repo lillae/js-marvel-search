@@ -460,13 +460,13 @@ form {
   display: grid;
 }
 .modal-header {
-  border: 1px solid #b30d0d;
+  border: 1px solid transparent;
   background: #b30d0d;
 }
 .modal-body {
   color: white;
   background: rgba(179, 13, 13, 1);
-  border: 1px solid rgba(179, 13, 13, 1);
+  border: 1px solid solid transparent;
   padding-bottom: 4rem;
 }
 
