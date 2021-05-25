@@ -156,6 +156,10 @@ h2 {
   font-size: 52px;
 }
 
+h6 {
+  margin-bottom: 5px;
+}
+
 a {
   text-decoration: none;
   &:hover {
@@ -469,6 +473,7 @@ form {
 .modal-pic {
   margin: 0 auto;
 }
+
 .modal-title {
   margin: 10px 0 20px;
   text-align: center;

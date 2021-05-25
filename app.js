@@ -1,6 +1,5 @@
 'use strict';
 
-
 const characters = document.querySelector('#characters');
 const comicsCards = document.querySelector('#comicsCards');
 const card = document.querySelectorAll('.card');
@@ -211,20 +210,21 @@ async function getHero(hero) {
 
           if (findComic.characters.items !== 0) {
             outputModal += `
-            <p style="margin-top: 20px;"> <strong>Characters: </strong>
+            <h6 style="margin-top: 30px;"> <strong>Characters: </strong></h6>
+            <p>
             ${findComic.characters.items.map((item) => {
               return `${item.name}`;
-            })} </p> `;
+            })}  </p> `;
 
             info.innerHTML = outputModal;
           }
 
           if (findComic.creators.items !== 0) {
-            outputModal += `<p style="margin-top: 20px;"> <strong>Creators: </strong>${findComic.creators.items.map(
-              (item) => {
-                return `${item.name}`;
-              }
-            )}</p>
+            outputModal += `<h6 style="margin-top: 30px;"> <strong>Creators: </strong></h6>
+            <p>
+            ${findComic.creators.items.map((item) => {
+              return `${item.name}`;
+            })}</p>
                                                
           `;
             info.innerHTML = outputModal;

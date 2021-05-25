@@ -52,6 +52,10 @@ h2 {
   font-size: 52px;
 }
 
+h6 {
+  margin-bottom: 5px;
+}
+
 a {
   text-decoration: none;
 }
@@ -469,13 +473,14 @@ form button.btn-search:hover {
 }
 
 .modal-header {
-  border: none;
+  border: 1px solid #b30d0d;
   background: #b30d0d;
 }
 
 .modal-body {
   color: white;
   background: #b30d0d;
+  border: 1px solid #b30d0d;
   padding-bottom: 4rem;
 }
 
