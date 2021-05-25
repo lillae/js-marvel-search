@@ -459,14 +459,22 @@ form {
 #infoModal {
   display: grid;
 }
+
+.modal-content {
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
 .modal-header {
-  border: 1px solid transparent;
+  border: none;
   background: #b30d0d;
 }
 .modal-body {
   color: white;
   background: rgba(179, 13, 13, 1);
-  border: 1px solid solid transparent;
   padding-bottom: 4rem;
 }
 
