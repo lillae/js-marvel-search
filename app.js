@@ -97,7 +97,7 @@ function renderComics(data) {
   const html = data.data.results
     .map((result) => {
       return `
-    <div class="col-xs-2 col-md-4 col-lg-3">
+    <div class="col-xs-2 col-sm-6 col-md-4 col-lg-3">
       <div class="card bg-dark text-white" >
         <img src="${result.thumbnail.path}/portrait_incredible.jpg" class="card-img comic-pic" alt="..." data-toggle="modal" data-target="#exampleModal">
         <div class="card-img-overlay d-flex overlay">
