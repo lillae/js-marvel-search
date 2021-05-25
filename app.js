@@ -1,9 +1,6 @@
 'use strict';
 
-const PUBLIC_KEY = 'f06b1bd678e7fd38d2fe3123c85aa6cf';
-const PRIVATE_KEY = '7b9fba352140f8f838dc213a2b33341b4e555c86';
-const ts = 123456;
-const hash = '5d849790c2bdd92949333c89eb77af4c';
+
 const characters = document.querySelector('#characters');
 const comicsCards = document.querySelector('#comicsCards');
 const card = document.querySelectorAll('.card');
