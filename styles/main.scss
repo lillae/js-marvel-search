@@ -272,11 +272,11 @@ form {
     &:after {
       content: '';
       position: absolute;
-      top: -190px;
+      top: -187px;
       left: -6px;
       width: 110%;
       height: 100%;
-      box-shadow: 0 8px 6px -6px $neonMain;
+      box-shadow: 0 5px 6px -6px $neonMain;
       transform: translateX(-100%);
       transition: all 0.5s ease;
     }

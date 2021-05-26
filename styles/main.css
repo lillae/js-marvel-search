@@ -223,12 +223,12 @@ form label {
 form label:after {
   content: '';
   position: absolute;
-  top: -190px;
+  top: -187px;
   left: -6px;
   width: 110%;
   height: 100%;
-  -webkit-box-shadow: 0 8px 6px -6px #e62429;
-          box-shadow: 0 8px 6px -6px #e62429;
+  -webkit-box-shadow: 0 5px 6px -6px #e62429;
+          box-shadow: 0 5px 6px -6px #e62429;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: all 0.5s ease;
