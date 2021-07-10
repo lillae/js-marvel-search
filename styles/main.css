@@ -434,9 +434,9 @@ form button.btn-search:hover {
 }
 
 #comics .card-img-overlay:hover {
-  background-color: rgba(175, 175, 175, 0.2);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  background-color: #ff545463;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }

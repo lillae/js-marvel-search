@@ -429,8 +429,8 @@ form {
     height: 101%;
     padding: 1rem;
     &:hover {
-      background-color: rgba(175, 175, 175, 0.2);
-      backdrop-filter: blur(15px);
+      background-color: #ff545463;
+      backdrop-filter: blur(10px);
       transition: background-color 0.2s ease;
     }
   }
