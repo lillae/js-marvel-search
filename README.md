@@ -2,7 +2,7 @@
 Built a Marvel search engine with Javascript using the Marvel API.
 
 
-**Description:** Search for Marvel characters to see their description and the Comics they appear in, info about comics can also be viewed.
+**Description:** Search for Marvel characters to see their description and the Comics they appear in. Details of the comics can also be viewed.
 
 
 **Check live:** https://kind-perlman-776328.netlify.app/
