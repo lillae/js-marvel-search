@@ -29,6 +29,19 @@ body {
   background: #77010f;
 }
 
+body::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #900213a8;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #e62429;
+  background-image: #e62429;
+}
+
 main {
   padding: 0 0px;
 }
