@@ -156,10 +156,6 @@ h2 {
   font-size: 52px;
 }
 
-h6 {
-  margin-bottom: 5px;
-}
-
 a {
   text-decoration: none;
   &:hover {
@@ -224,9 +220,9 @@ header {
   }
 }
 
-.show {
-  visibility: visible;
-}
+// .show {
+//   visibility: visible;
+// }
 
 .search-col {
   @include flex;
@@ -272,11 +268,11 @@ form {
     &:after {
       content: '';
       position: absolute;
-      top: -187px;
+      top: -190px;
       left: -6px;
       width: 110%;
       height: 100%;
-      box-shadow: 0 5px 6px -6px $neonMain;
+      box-shadow: 0 4px 6px -6px $neonMain;
       transform: translateX(-100%);
       transition: all 0.5s ease;
     }
@@ -388,6 +384,7 @@ form {
 #comics {
   width: 100%;
   height: 100%;
+  padding-bottom: 150px;
   @include flex;
   h2 {
     margin-bottom: 2rem;
@@ -462,26 +459,31 @@ form {
 
 .modal-content {
   overflow: hidden;
-  background-color: transparent;
-  border: none;
-  outline: none;
+  background: #b30d0d;
+  background-color: #b30d0d !important;
+  border: 1px solid #b30d0d;
+  outline: 1px solid #b30d0d;
   border-radius: 0;
 }
 
 .modal-header {
-  border: none;
+  border-bottom: 1px solid #b30d0d !important;
+  background-color: #b30d0d !important;
   background: #b30d0d;
+  outline: none;
 }
 .modal-body {
   color: white;
-  background: rgba(179, 13, 13, 1);
+  background: #b30d0d;
+  background-color: #b30d0d;
   padding-bottom: 4rem;
+  border: none;
+  outline: none;
 }
 
 .modal-pic {
   margin: 0 auto;
 }
-
 .modal-title {
   margin: 10px 0 20px;
   text-align: center;
@@ -495,16 +497,18 @@ form {
 
 footer {
   margin-top: 30px;
-  height: 10vh;
-  min-height: 10vh;
   width: 100%;
   @include flex;
+  flex-direction: column;
   position: absolute;
   bottom: 0;
+  border-top: 1px solid $neonMain;
+
   a {
     text-decoration: none;
     color: $neonMain;
-    align-self: flex-end;
+    align-self: center;
+    margin-bottom: 10px;
     &:hover {
       color: $neonSec;
     }
@@ -513,6 +517,32 @@ footer {
     text-transform: uppercase;
     font-family: $bodyFt;
     font-size: 14px;
+    margin-bottom: 0;
+  }
+  .footer-info {
+    padding-top: 20px;
+    p {
+      color: $neonMain;
+    }
+  }
+  .code-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 14px;
+    a {
+      color: $neonMain;
+      align-self: center;
+      margin-bottom: 10px;
+
+      &:hover {
+        color: $neonSec;
+      }
+    }
+    p {
+      text-transform: capitalize;
+    }
   }
 }
 
@@ -548,6 +578,7 @@ footer {
     margin: 0 0px;
   }
   #characters {
+    margin: 0px auto;
     .card {
       .card-img-top {
         width: 50%;
@@ -574,10 +605,21 @@ footer {
 
 @include portrait {
   #hero {
+    min-height: 100%;
     .arrow {
-      bottom: 120px;
-      right: 0;
+      display: none;
     }
+  }
+  #characters {
+    margin: 0px auto;
+    .card {
+      .card-img-top {
+        margin-top: -60px;
+      }
+    }
+  }
+  #comics {
+    padding-top: 110px;
   }
 }
 
@@ -672,8 +714,9 @@ footer {
 
   #hero {
     .arrow {
+      display: none;
       right: -25px;
-      bottom: 80px;
+      bottom: 100px;
     }
   }
 
@@ -684,7 +727,7 @@ footer {
     }
     label {
       &:after {
-        top: -241px;
+        top: -240px;
       }
     }
     button.btn-search {

@@ -1,5 +1,9 @@
 'use strict';
 
+const PUBLIC_KEY = 'f06b1bd678e7fd38d2fe3123c85aa6cf';
+const PRIVATE_KEY = '7b9fba352140f8f838dc213a2b33341b4e555c86';
+const ts = 123456;
+const hash = '5d849790c2bdd92949333c89eb77af4c';
 const characters = document.querySelector('#characters');
 const comicsCards = document.querySelector('#comicsCards');
 const card = document.querySelectorAll('.card');
@@ -97,7 +101,7 @@ function renderComics(data) {
   const html = data.data.results
     .map((result) => {
       return `
-    <div class="col-xs-2 col-sm-6 col-md-4 col-lg-3">
+    <div class="col-xs-2 col-md-4 col-lg-3">
       <div class="card bg-dark text-white" >
         <img src="${result.thumbnail.path}/portrait_incredible.jpg" class="card-img comic-pic" alt="..." data-toggle="modal" data-target="#exampleModal">
         <div class="card-img-overlay d-flex overlay">
@@ -143,9 +147,7 @@ async function getHero(hero) {
 
     if (data.data.count === 0) {
       hideSpinner();
-      throw new Error(
-        ` '${hero}' not found. <br> Please try again and take care of correct spelling. Eg:spider-man`
-      );
+      throw new Error(` '${hero}' not found. <br> Please try again`);
     } else if (data === undefined || data.length === 0) {
       hideSpinner();
       throw new Error(`An error occured. Try again later.`);
@@ -210,21 +212,20 @@ async function getHero(hero) {
 
           if (findComic.characters.items !== 0) {
             outputModal += `
-            <h6 style="margin-top: 30px;"> <strong>Characters: </strong></h6>
-            <p>
+            <p style="margin-top: 20px;"> <strong>Characters: </strong>
             ${findComic.characters.items.map((item) => {
               return `${item.name}`;
-            })}  </p> `;
+            })} </p> `;
 
             info.innerHTML = outputModal;
           }
 
           if (findComic.creators.items !== 0) {
-            outputModal += `<h6 style="margin-top: 30px;"> <strong>Creators: </strong></h6>
-            <p>
-            ${findComic.creators.items.map((item) => {
-              return `${item.name}`;
-            })}</p>
+            outputModal += `<p style="margin-top: 20px;"> <strong>Creators: </strong>${findComic.creators.items.map(
+              (item) => {
+                return `${item.name}`;
+              }
+            )}</p>
                                                
           `;
             info.innerHTML = outputModal;

@@ -52,10 +52,6 @@ h2 {
   font-size: 52px;
 }
 
-h6 {
-  margin-bottom: 5px;
-}
-
 a {
   text-decoration: none;
 }
@@ -147,10 +143,6 @@ header .subheading {
   top: 50%;
 }
 
-.show {
-  visibility: visible;
-}
-
 .search-col {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,12 +215,12 @@ form label {
 form label:after {
   content: '';
   position: absolute;
-  top: -187px;
+  top: -190px;
   left: -6px;
   width: 110%;
   height: 100%;
-  -webkit-box-shadow: 0 5px 6px -6px #e62429;
-          box-shadow: 0 5px 6px -6px #e62429;
+  -webkit-box-shadow: 0 4px 6px -6px #e62429;
+          box-shadow: 0 4px 6px -6px #e62429;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: all 0.5s ease;
@@ -372,6 +364,7 @@ form button.btn-search:hover {
 #comics {
   width: 100%;
   height: 100%;
+  padding-bottom: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -474,21 +467,27 @@ form button.btn-search:hover {
 
 .modal-content {
   overflow: hidden;
-  background-color: transparent;
-  border: none;
-  outline: none;
+  background: #b30d0d;
+  background-color: #b30d0d !important;
+  border: 1px solid #b30d0d;
+  outline: 1px solid #b30d0d;
   border-radius: 0;
 }
 
 .modal-header {
-  border: none;
+  border-bottom: 1px solid #b30d0d !important;
+  background-color: #b30d0d !important;
   background: #b30d0d;
+  outline: none;
 }
 
 .modal-body {
   color: white;
   background: #b30d0d;
+  background-color: #b30d0d;
   padding-bottom: 4rem;
+  border: none;
+  outline: none;
 }
 
 .modal-pic {
@@ -506,8 +505,6 @@ form button.btn-search:hover {
 
 footer {
   margin-top: 30px;
-  height: 10vh;
-  min-height: 10vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -518,15 +515,22 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: absolute;
   bottom: 0;
+  border-top: 1px solid #e62429;
 }
 
 footer a {
   text-decoration: none;
   color: #e62429;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 10px;
 }
 
 footer a:hover {
@@ -537,6 +541,48 @@ footer p {
   text-transform: uppercase;
   font-family: "Share Tech Mono", monospace;
   font-size: 14px;
+  margin-bottom: 0;
+}
+
+footer .footer-info {
+  padding-top: 20px;
+}
+
+footer .footer-info p {
+  color: #e62429;
+}
+
+footer .code-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 14px;
+}
+
+footer .code-info a {
+  color: #e62429;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 10px;
+}
+
+footer .code-info a:hover {
+  color: #ff8e91;
+}
+
+footer .code-info p {
+  text-transform: capitalize;
 }
 
 @media (max-width: 375px) {
@@ -565,6 +611,9 @@ footer p {
   .search-col {
     margin: 0 0px;
   }
+  #characters {
+    margin: 0px auto;
+  }
   #characters .card .card-img-top {
     width: 50%;
   }
@@ -586,9 +635,20 @@ footer p {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  #hero {
+    min-height: 100%;
+  }
   #hero .arrow {
-    bottom: 120px;
-    right: 0;
+    display: none;
+  }
+  #characters {
+    margin: 0px auto;
+  }
+  #characters .card .card-img-top {
+    margin-top: -60px;
+  }
+  #comics {
+    padding-top: 110px;
   }
 }
 
@@ -681,8 +741,9 @@ footer p {
     margin-left: 30px;
   }
   #hero .arrow {
+    display: none;
     right: -25px;
-    bottom: 80px;
+    bottom: 100px;
   }
   form {
     height: 300px;
@@ -691,7 +752,7 @@ footer p {
     padding: 1rem 2.5rem;
   }
   form label:after {
-    top: -241px;
+    top: -240px;
   }
   form button.btn-search {
     padding: 0.8rem 4rem;
