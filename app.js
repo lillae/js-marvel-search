@@ -100,17 +100,19 @@ function renderComics(data) {
 
   const html = data.data.results
     .map((result) => {
-      return `
-    <div class="col-xs-2 col-md-4 col-lg-3">
-      <div class="card bg-dark text-white" >
-        <img src="${result.thumbnail.path}/portrait_incredible.jpg" class="card-img comic-pic" alt="..." data-toggle="modal" data-target="#exampleModal">
-        <div class="card-img-overlay d-flex overlay">
-        <p class="card-text hide price">Price: $${result.prices[0].price}</p>
-        <button href="" class="card-btn hide" data-toggle="modal" data-target="#exampleModal" data-id="${result.id}">View Details</button>
-    </div>
+      if (!`${result.thumbnail.path}`.match(/image_not_available/)) {
+        return `
+      <div class="col-xs-2 col-md-4 col-lg-3 card-main">
+        <div class="card bg-dark text-white" >
+          <img src="${result.thumbnail.path}/portrait_incredible.jpg" class="card-img comic-pic" alt="..." data-toggle="modal" data-target="#exampleModal">
+          <div class="card-img-overlay d-flex overlay">
+          <p class="card-text hide price">Price: $${result.prices[0].price}</p>
+          <button href="" class="card-btn hide" data-toggle="modal" data-target="#exampleModal" data-id="${result.id}">View Details</button>
       </div>
-    </div>
-    `;
+        </div>
+      </div>
+      `;
+      }
     })
     .join('');
   comicsCards.insertAdjacentHTML('afterbegin', html);
