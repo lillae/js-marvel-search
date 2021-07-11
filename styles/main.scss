@@ -665,12 +665,6 @@ footer {
       top: -270px;
     }
   }
-  #hero {
-    .arrow {
-      bottom: 0px;
-      right: 45%;
-    }
-  }
 
   #comics h2 {
     margin-bottom: 5rem;
@@ -747,14 +741,6 @@ footer {
     margin-left: 30px;
   }
 
-  #hero {
-    .arrow {
-      display: none;
-      right: -25px;
-      bottom: 100px;
-    }
-  }
-
   form {
     height: 300px;
     button.btn-search {
@@ -787,21 +773,5 @@ footer {
 
   .modal-title {
     font-size: 1.8rem;
-  }
-}
-
-@include lgdesktop {
-  #hero {
-    .arrow {
-      bottom: 40px;
-    }
-  }
-}
-
-@include xldesktop {
-  #hero {
-    .arrow {
-      bottom: 10px;
-    }
   }
 }
