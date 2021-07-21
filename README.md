@@ -1,5 +1,5 @@
 # Marvel-Api-Project
-Built a Marvel search engine with Javascript using the Marvel API.
+Built a Marvel search engine with Javascript, SASS, Bootstrap using the Marvel API.
 
 
 **Description:** Search for Marvel characters to see their description and the Comics they appear in. Details of the comics can also be viewed.
